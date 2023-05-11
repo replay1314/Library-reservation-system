@@ -1,0 +1,15 @@
+.box1 {
+    width: 1050px;
+    height: 600px;
+    /* 相对定位 */
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    /* 设置圆角 */
+    border-radius: 8px;
+    /* 设置边框 */
+    border: 1px solid rgba(255, 255, 255, .6);
+    /* 设置盒子阴影 */
+    box-shadow: 2px 1px 19px rgba(0, 0, 0, .1);
+    text-align: center;
+}
