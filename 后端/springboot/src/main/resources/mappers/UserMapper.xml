@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.dao.UserMapper">
+    <select id="findAll" resultType="com.springboot.pojo.User">
+        select *
+        from users;
+    </select>
+    <select id="login" resultType="com.springboot.pojo.User" parameterType="String">
+        select *
+        from users
+        where phone=#{phone} and password=#{password};
+    </select>
+    <select id="findByPhone" resultType="com.springboot.pojo.User" parameterType="String">
+        select *
+        from users
+        where phone=#{phone};
+    </select>
+    <select id="findById" resultType="com.springboot.pojo.User" parameterType="String">
+        select *
+        from users
+        where id=#{id} and seatNum=#{seatNum};
+    </select>
+
+    <insert id="register" parameterType="String">
+        insert into users(phone,password)
+        values (#{phone}, #{password});
+    </insert>
+
+    <update id="changeOpen">
+        update users set flag=#{flag} where phone=#{phone};
+    </update>
+
+    <update id="update" parameterType="com.springboot.pojo.User">
+        update users set password=#{password},id=#{id},seatNum=#{seatNum},email=#{email},flag=#{flag} where phone=#{phone};
+    </update>
+
+</mapper>
